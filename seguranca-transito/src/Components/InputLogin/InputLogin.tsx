@@ -1,8 +1,7 @@
 import {
     Center,
     Box,
-    Input,
-    
+    Input
 } from '@chakra-ui/react';
 
 import {
@@ -21,8 +20,10 @@ export default function InputLogin(props: any){
             borderRadius={30}
             overflow="hidden"
             border="2px solid rgba(255, 255, 255, 0.4)"
+            className='input-login'
+            
         >
-            <Input 
+            <Input
                 type="email" 
                 width="85%"
                 boxSizing='border-box'
@@ -37,11 +38,12 @@ export default function InputLogin(props: any){
                     color: 'rgba(255, 255, 255, 0.4)'
                 }}
             /> 
-            <Center 
+            <Center
+                backgroundColor="transparent"
                 boxSizing='border-box'
                 padding={10}
             >
-                <EmailIcon height={20} width="auto" color="rgba(255, 255, 255, 0.4)"/>
+                <EmailIcon height={20} width="auto" color="rgba(255, 255, 255, 0.4)" className='input-icon-login'/>
             </Center>
         </Box>
     )

@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react';
 
 import {
-    EmailIcon
+    LockIcon
 } from '@chakra-ui/icons';
 
 
@@ -23,7 +23,7 @@ export default function InputPassword(props: any){
             border="2px solid rgba(255, 255, 255, 0.4)"
         >
             <Input 
-                type="email" 
+                type="password" 
                 width="85%"
                 boxSizing='border-box'
                 padding={20}
@@ -32,7 +32,7 @@ export default function InputPassword(props: any){
                 fontFamily="'Roboto', sans-serif"
                 fontSize={15}
                 fontWeight="bold"
-                placeholder='Usuário'
+                placeholder='Senha'
                 _placeholder={{
                     color: 'rgba(255, 255, 255, 0.4)'
                 }}
@@ -41,7 +41,7 @@ export default function InputPassword(props: any){
                 boxSizing='border-box'
                 padding={10}
             >
-                <EmailIcon height={20} width="auto" color="rgba(255, 255, 255, 0.4)"/>
+                <LockIcon height={20} width="auto" color="rgba(255, 255, 255, 0.4)"/>
             </Center>
         </Box>
     )
