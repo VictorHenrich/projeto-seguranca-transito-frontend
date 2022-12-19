@@ -26,11 +26,11 @@ export default function InputPassword(props: any){
                 type="password" 
                 width="85%"
                 boxSizing='border-box'
-                padding={20}
+                padding={8}
                 backgroundColor="transparent"
                 color="rgb(255, 255, 255)"
                 fontFamily="'Roboto', sans-serif"
-                fontSize={15}
+                fontSize={18}
                 fontWeight="bold"
                 placeholder='Senha'
                 _placeholder={{
@@ -39,9 +39,13 @@ export default function InputPassword(props: any){
             /> 
             <Center 
                 boxSizing='border-box'
-                padding={10}
+                padding={8}
             >
-                <LockIcon height={20} width="auto" color="rgba(255, 255, 255, 0.4)"/>
+                <LockIcon 
+                    height={8}
+                    width="auto"
+                    color="rgba(255, 255, 255, 0.4)"
+                />
             </Center>
         </Box>
     )

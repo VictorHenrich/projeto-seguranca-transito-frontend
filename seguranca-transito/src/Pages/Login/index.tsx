@@ -19,7 +19,7 @@ import IconTransit from '../../Assets/IconTransit.jpg';
 
 
 
-export default function HomePage(){
+export default function HomePage(props: any){
     return (
         <Container>
             <Center 
@@ -47,11 +47,12 @@ export default function HomePage(){
                         width="50%"
                         backgroundColor="rgb(255, 65, 51)"
                         boxSizing='border-box'
-                        padding={40}
+                        padding={20}
                     >
                         <Box>
                             <Heading
                                 as="h1"
+                                fontSize={30}
                                 color="rgb(255, 255, 255)"
                                 fontFamily="'Open Sans', sans-serif"
                                 textAlign="left"
@@ -64,7 +65,7 @@ export default function HomePage(){
                                 color="rgb(255, 255, 255)"
                                 fontFamily="'Roboto', sans-serif"
                                 textAlign="left"
-                                marginTop={10}
+                                marginTop={5}
 
                             >
                                 Acesse sua conta agora em nossa plataforma!
@@ -73,7 +74,7 @@ export default function HomePage(){
 
                         <Box>
                             <InputLogin/>
-                            <InputPassword marginTop={20}/>
+                            <InputPassword marginTop={50}/>
                             <Link 
                                 display="block"
                                 textAlign="right" 
@@ -91,7 +92,8 @@ export default function HomePage(){
                             <Button
                                 backgroundColor="rgba(0,0,0, 0.2)"
                                 width="50%"
-                                height={40}
+                                fontSize={15}
+                                padding={5}
                                 borderRadius={20}
                                 color="rgb(255, 255, 255)"
                                 fontFamily="'Roboto', sans-serif"
