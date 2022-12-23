@@ -47,7 +47,7 @@ export default function HomePage(props: any){
                         width="50%"
                         backgroundColor="rgb(255, 65, 51)"
                         boxSizing='border-box'
-                        padding={20}
+                        padding="5%"
                     >
                         <Box>
                             <Heading
@@ -74,7 +74,7 @@ export default function HomePage(props: any){
 
                         <Box>
                             <InputLogin/>
-                            <InputPassword marginTop={50}/>
+                            <InputPassword marginTop="5%"/>
                             <Link 
                                 display="block"
                                 textAlign="right" 
@@ -93,7 +93,7 @@ export default function HomePage(props: any){
                                 backgroundColor="rgba(0,0,0, 0.2)"
                                 width="50%"
                                 fontSize={15}
-                                padding={5}
+                                padding={2}
                                 borderRadius={20}
                                 color="rgb(255, 255, 255)"
                                 fontFamily="'Roboto', sans-serif"

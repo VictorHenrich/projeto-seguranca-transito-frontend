@@ -17,8 +17,9 @@ export default function InputLogin(props: any){
         <Box
             {...props}
             display="flex"
-            justifyContent="flex-start"
+            justifyContent="space-between"
             backgroundColor="transparent"
+            padding={5}
             borderRadius={30}
             overflow="hidden"
             border="2px solid rgba(255, 255, 255, 0.4)"
@@ -29,7 +30,6 @@ export default function InputLogin(props: any){
                 type="email" 
                 width="85%"
                 boxSizing='border-box'
-                padding={8}
                 backgroundColor="transparent"
                 color="rgb(255, 255, 255)"
                 fontFamily="'Roboto', sans-serif"
@@ -43,7 +43,6 @@ export default function InputLogin(props: any){
             <Center
                 backgroundColor="transparent"
                 boxSizing='border-box'
-                padding={8}
             >
                 <EmailIcon 
                     height={8}  

@@ -16,9 +16,10 @@ export default function InputPassword(props: any){
         <Box
             {...props}
             display="flex"
-            justifyContent="flex-start"
+            justifyContent="space-between"
             backgroundColor="transparent"
             borderRadius={30}
+            padding={5}
             overflow="hidden"
             border="2px solid rgba(255, 255, 255, 0.4)"
         >
@@ -26,7 +27,6 @@ export default function InputPassword(props: any){
                 type="password" 
                 width="85%"
                 boxSizing='border-box'
-                padding={8}
                 backgroundColor="transparent"
                 color="rgb(255, 255, 255)"
                 fontFamily="'Roboto', sans-serif"
@@ -39,7 +39,6 @@ export default function InputPassword(props: any){
             /> 
             <Center 
                 boxSizing='border-box'
-                padding={8}
             >
                 <LockIcon 
                     height={8}
