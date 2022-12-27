@@ -1,15 +1,13 @@
 import { ChakraProvider } from "@chakra-ui/react";
 
-import GlobalStyles from "./Themes/GlobalStyles";
+import GlobalStyles from "./Themes/GlobalTheme";
 import ApplicationRoutes from "./Routes"
-import "./Styles/reset.css";
 
 function App() {
   return (
 
     <ChakraProvider theme={GlobalStyles}>
       <ApplicationRoutes/>
-
     </ ChakraProvider>
     
   );
