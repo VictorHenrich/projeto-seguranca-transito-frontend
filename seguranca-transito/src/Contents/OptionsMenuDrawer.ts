@@ -1,35 +1,55 @@
-export interface IOptionsMenuDrawer{
-    description: string,
-    icon: any,
-    link: string
-}
+import { PropsOptionsMenuDrawer } from '../Components/MenuDrawer';
+
+import { 
+    AiOutlineHome
+} from 'react-icons/ai';
+
+import {
+    RxGear
+} from 'react-icons/rx';
+
+import {
+    TbReportSearch
+} from 'react-icons/tb';
+
+import {
+    BsChatDots
+} from 'react-icons/bs';
+
+import {
+    BiLogOut
+} from 'react-icons/bi';
 
 
 
-export const optionsMenuDrawer: IOptionsMenuDrawer[] = [
+
+
+
+
+export const optionsMenuDrawer: PropsOptionsMenuDrawer[] = [
     {
         description: "Inicio",
-        icon: "",
-        link: ""
+        icon: AiOutlineHome,
+        link: "",
     },
     {
         description: "Configurações",
-        icon: "",
+        icon: RxGear,
         link: ""
     },
     {
         description: "Relatórios",
-        icon: "",
+        icon: TbReportSearch,
         link: ""
     },
     {
         description: "Conversas",
-        icon: "",
+        icon: BsChatDots,
         link: ""
     },
     {
         description: "Sair",
-        icon: "",
+        icon: BiLogOut,
         link: ""
     }
 ]

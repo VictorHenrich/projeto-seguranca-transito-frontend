@@ -25,6 +25,7 @@ import {
     HamburgerIcon
 } from "@chakra-ui/icons";
 
+import { optionsMenuDrawer } from '../../Contents/OptionsMenuDrawer';
 import MenuDrawer from '../../Components/MenuDrawer';
 
 
@@ -62,7 +63,11 @@ export default function ContainerApp(props: any){
             position="relative"
             background="secondary"
         >
-            <MenuDrawer isOpen={openMenu} onClose={() => setOpenMenu(false)}/>
+            <MenuDrawer
+                options={optionsMenuDrawer}
+                isOpen={openMenu} 
+                onClose={() => setOpenMenu(false)}
+            />
 
             <Box
                 position="absolute"
@@ -96,6 +101,7 @@ export default function ContainerApp(props: any){
             </Box>
                 <Box
                     position="absolute"
+                    overflow="auto"
                     left={0}
                     zIndex={0}
                     top="10vh"

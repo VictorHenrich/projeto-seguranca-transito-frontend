@@ -7,6 +7,7 @@ import {
     DrawerOverlay,
     List,
     ListItem,
+    ListIcon,
     Flex,
     Avatar,
     Text,
@@ -15,13 +16,19 @@ import {
     DrawerProps
 } from "@chakra-ui/react";
 
-import { optionsMenuDrawer } from "../../Contents/OptionsMenuDrawer";
+
+export interface PropsOptionsMenuDrawer{
+    description: string,
+    icon?: any,
+    link: string
+}
+
+export interface PropsMenuDrawer extends Pick<DrawerProps, "isOpen" | "onClose">{
+    options: PropsOptionsMenuDrawer[]
+}
 
 
-
-export default function MenuDrawer(props: Pick<DrawerProps, "isOpen" | "onClose">){
-
-    
+export default function MenuDrawer(props: PropsMenuDrawer){
 
     return (
         <Drawer 
@@ -56,14 +63,17 @@ export default function MenuDrawer(props: Pick<DrawerProps, "isOpen" | "onClose"
                                     fontSize={20}
                                     fontWeight="bold"
                                     color="rgb(10,10,10)"
+                                    fontFamily="'Open Sans', sans-serif"
                                 >
                                     Victor Henrich
                                 </Text>
                                 <Text
-                                    color="rgb(120, 120, 120)"
+                                    color="rgb(150, 150, 150)"
                                     fontSize={15}
-
-                                >victorhenrich993@gmail.com</Text>
+                                    fontFamily="'Open Sans', sans-serif"
+                                >
+                                    victorhenrich993@gmail.com
+                                </Text>
                             </Stack>
                         </Flex>
                         <Divider />
@@ -76,24 +86,38 @@ export default function MenuDrawer(props: Pick<DrawerProps, "isOpen" | "onClose"
                             <List
                                 width="100%"
                             >
-                                {optionsMenuDrawer.map(item => {
+                                {props.options.map(item => {
 
                                     return (
                                         <ListItem
-                                            
+                                            fontFamily="'Roboto', sans-serif"
+                                            display="flex"
+                                            flexDirection="row"
+                                            justifyContent="flex-start"
+                                            alignItems="center"
                                             color="primary"
                                             margin="10px 0px"
                                             padding={2}
+                                            fontSize={20}
                                             cursor="pointer"
                                             borderRadius={10}
-                                            transition="all .1s"
+                                            transition="all .2s"
                                             _hover={{
                                                 boxShadow:"0px 1px 3px 0px rgb(200,200,200)",
                                                 backgroundColor: "primary",
                                                 color: "secondary"
                                             }}
                                         >
+                                            {item.icon && (
+                                                <ListIcon
+                                                    as={item.icon}
+                                                    height={10}
+                                                    width="auto"
+                                                    paddingRight={2}
+                                                />
+                                            )}
                                             {item.description}
+                                            
                                         </ListItem>
                                     )
                                 })}
