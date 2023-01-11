@@ -1,23 +1,12 @@
 import { useState, CSSProperties } from 'react';
 
+import { Outlet } from 'react-router-dom';
+
 import {
     Container,
-    Center,
     Box,
-    Drawer,
-    DrawerContent,
-    DrawerBody,
-    DrawerHeader,
-    DrawerOverlay,
-    List,
-    ListItem,
-    ListIcon,
     IconButton,
     Flex,
-    Avatar,
-    Text,
-    Stack,
-    Divider
 } from "@chakra-ui/react";
 
 
@@ -52,7 +41,7 @@ let styleDefaultComponents: IStyleDefaultComponents = {
 }
 
 
-export default function ContainerApp(props: any){
+export default function ContainerApp(){
 
     const [openMenu, setOpenMenu] = useState(false);
 
@@ -108,7 +97,7 @@ export default function ContainerApp(props: any){
                     style={styleDefaultComponents.containerContent}
                 >   
 
-                    {props.children}
+                    <Outlet />
                 </Box>
 
                 <Box

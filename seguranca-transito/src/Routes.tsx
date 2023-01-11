@@ -1,3 +1,4 @@
+import ContainerApp from './Components/ContainerApp';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import HomePage from './Pages/Home';
 import LoginPage from './Pages/Login';
@@ -12,7 +13,13 @@ export default function ApplicationRoutes(){
         },
         {
             path: '/home',
-            element: <HomePage />
+            element: <ContainerApp />,
+            children: [
+                {
+                    path: "",
+                    element: <HomePage />
+                }
+            ]
         }
     ]);
 
