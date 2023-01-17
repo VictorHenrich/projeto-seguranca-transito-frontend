@@ -17,7 +17,7 @@ import {
     EmailIcon
 } from '@chakra-ui/icons';
 
-import InputLogin from '../../Components/InputLogin';
+import InputLogin from '../../Components/Input';
 import BackgroundLogin from '../../Assets/BackgroundLogin.svg';
 import IconTransit from '../../Assets/IconTransit.jpg';
 
@@ -76,15 +76,20 @@ export default function HomePage(props: any){
 
                     <Stack spacing={5}>
                         <InputLogin
-                            icon={<EmailIcon />}
+                            icon={EmailIcon}
                             inputProps={{
                                 type: "email"
                             }}
-                        />
+                            colors={{
+                                default: "rgba(255, 255, 255, 0.3)"
+                            }}                        />
                         
                         <Stack spacing={5}>
                             <InputLogin 
-                                icon={<LockIcon />}
+                                icon={LockIcon}
+                                colors={{
+                                    default: "rgba(255, 255, 255, 0.3)"
+                                }}
                                 inputProps={{
                                     type: "password"
                                 }}

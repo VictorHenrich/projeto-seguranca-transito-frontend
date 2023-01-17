@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import HomePage from './Pages/Home';
 import LoginPage from './Pages/Login';
+import ChatPage from './Pages/Chat';
 
 
 export default function ApplicationRoutes(){
@@ -13,6 +14,10 @@ export default function ApplicationRoutes(){
         {
             path: '/home',
             element: <HomePage />
+        },
+        {
+            path: '/chat',
+            element: <ChatPage/>
         }
     ]);
 

@@ -2,22 +2,9 @@ import { useState, CSSProperties } from 'react';
 
 import {
     Container,
-    Center,
     Box,
-    Drawer,
-    DrawerContent,
-    DrawerBody,
-    DrawerHeader,
-    DrawerOverlay,
-    List,
-    ListItem,
-    ListIcon,
     IconButton,
     Flex,
-    Avatar,
-    Text,
-    Stack,
-    Divider
 } from "@chakra-ui/react";
 
 
@@ -82,7 +69,8 @@ export default function ContainerApp(props: any){
                     justifyContent="center"
                     alignItems="center"
                     height="100%"
-                    maxWidth="10%"
+                    minWidth={100}
+                    maxWidth="5%"
                 >
                     <IconButton
                         backgroundColor="secondary"
@@ -117,7 +105,7 @@ export default function ContainerApp(props: any){
                     bottom={0}
                     left={0}
                     style={styleDefaultComponents.containerBottom}
-                    background="rgb(220, 220, 220)"
+                    background="lightGray"
                     boxShadow="0px 0px 3px 1px rgb(110, 110, 110)"
                 >
                 </Box>
