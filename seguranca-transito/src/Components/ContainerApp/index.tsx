@@ -1,5 +1,7 @@
 import { useState, CSSProperties } from 'react';
 
+import { Outlet } from 'react-router-dom';
+
 import {
     Container,
     Box,
@@ -39,7 +41,7 @@ let styleDefaultComponents: IStyleDefaultComponents = {
 }
 
 
-export default function ContainerApp(props: any){
+export default function ContainerApp(){
 
     const [openMenu, setOpenMenu] = useState(false);
 
@@ -96,7 +98,7 @@ export default function ContainerApp(props: any){
                     style={styleDefaultComponents.containerContent}
                 >   
 
-                    {props.children}
+                    <Outlet />
                 </Box>
 
                 <Box

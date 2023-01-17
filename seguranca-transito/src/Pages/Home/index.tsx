@@ -19,8 +19,7 @@ import TableDefault, { PropsColumns, ActionButtonProps, PropsBody } from '../../
 
 
 
-export default function Home(props: any){
-
+export default function Home(){
     function onClickIconTable(row: PropsBody[]){
         console.log(row);
     }
@@ -110,22 +109,20 @@ export default function Home(props: any){
     ]
 
     return (
-        <ContainerApp>
-            <Center
-                width="full"
-                height="full"
-                boxSizing='border-box'
-                padding={10}
-                background="rgb(245, 245, 245)"
-            >
-                <TableDefault
-                    body={body}
-                    columns={columns}
-                    actions={{
-                        buttons: iconsTable
-                    }}
-                />
-            </Center>
-        </ContainerApp>
+        <Center
+            width="full"
+            height="full"
+            boxSizing='border-box'
+            padding={10}
+            background="rgb(245, 245, 245)"
+        >
+            <TableDefault
+                body={body}
+                columns={columns}
+                actions={{
+                    buttons: iconsTable
+                }}
+            />
+        </Center>
     )
 }
