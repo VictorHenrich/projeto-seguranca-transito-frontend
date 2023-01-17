@@ -9,10 +9,6 @@ import {
 } from 'react-icons/rx';
 
 import {
-    TbReportSearch
-} from 'react-icons/tb';
-
-import {
     BsChatDots
 } from 'react-icons/bs';
 
@@ -35,11 +31,6 @@ export const optionsMenuDrawer: PropsOptionsMenuDrawer[] = [
     {
         description: "Configurações",
         icon: RxGear,
-        link: ""
-    },
-    {
-        description: "Relatórios",
-        icon: TbReportSearch,
         link: ""
     },
     {

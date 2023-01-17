@@ -175,7 +175,8 @@ export default function Chat(){
                                 Victor Henrich
                             </Heading>
                             <Badge 
-                                colorScheme="green"
+                                background="green"
+                                color="secondary"
                             >
                                 online
                             </Badge>
