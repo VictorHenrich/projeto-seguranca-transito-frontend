@@ -1,3 +1,4 @@
+
 import {
     Center
 } from "@chakra-ui/react";
@@ -11,6 +12,8 @@ import {
     MdOutlineIntegrationInstructions
 } from 'react-icons/md';
 import TableDefault, { PropsColumns, ActionButtonProps, PropsBody } from '../../Components/TableDefault';
+import Maps from "../../Components/Maps";
+import DialogDefault from "../../Components/DialogDefault";
 
 
 
@@ -116,6 +119,14 @@ export default function Home(){
                 columns={columns}
                 actions={{
                     buttons: iconsTable
+                }}
+            />
+            <Maps
+                isOpen
+                onClose={() => null}
+                position={{
+                    lat: 51.505,
+                    lng: -0.09
                 }}
             />
         </Center>
