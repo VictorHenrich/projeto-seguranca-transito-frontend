@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
     Center,
     Box,
@@ -12,18 +13,45 @@ import {
 
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 
-import {
-    LockIcon,
-    EmailIcon
-} from '@chakra-ui/icons';
+import { AiOutlineUser, AiOutlineLock, AiOutlineHome } from 'react-icons/ai';
 
 import InputLogin from '../../Components/Input';
 import BackgroundLogin from '../../Assets/BackgroundLogin.svg';
 import IconTransit from '../../Assets/IconTransit.jpg';
+import AuthorizationService from '../../Services/Auth/AuthorizationService';
 
+
+
+interface UserDataProps{
+    departament: string,
+    username: string,
+    password: string 
+}
 
 
 export default function HomePage(props: any){
+
+    const [userData, setUserData] = useState<UserDataProps>({
+        username: "",
+        password: "",
+        departament: ""
+    });
+
+    function changeState(props: Partial<UserDataProps>): void{
+        setUserData({ ...userData, ...props });
+    }
+
+    async function auth(): Promise<void>{
+        try{
+            const authorizationService = new AuthorizationService();
+
+            await authorizationService.execute({ ...userData });
+
+        }catch(error){
+            console.log(error);
+        }
+    }   
+
     return (
         <Center 
             backgroundImage={BackgroundLogin}
@@ -76,22 +104,44 @@ export default function HomePage(props: any){
 
                     <Stack spacing={5}>
                         <InputLogin
-                            icon={EmailIcon}
+                            icon={AiOutlineHome}
                             inputProps={{
-                                type: "email"
+                                type: "text",
+                                value: userData.departament,
+                                onChange: ({ target }) => {
+                                    changeState({ departament: target.value });
+                                }
                             }}
                             colors={{
                                 default: "rgba(255, 255, 255, 0.3)"
-                            }}                        />
+                            }}                      
+                        />
+                        <InputLogin
+                            icon={AiOutlineUser}
+                            inputProps={{
+                                type: "text",
+                                value: userData.username,
+                                onChange: ({ target }) => {
+                                    changeState({ username: target.value });
+                                }
+                            }}
+                            colors={{
+                                default: "rgba(255, 255, 255, 0.3)"
+                            }}                      
+                        />
                         
                         <Stack spacing={5}>
                             <InputLogin 
-                                icon={LockIcon}
+                                icon={AiOutlineLock}
                                 colors={{
                                     default: "rgba(255, 255, 255, 0.3)"
                                 }}
                                 inputProps={{
-                                    type: "password"
+                                    type: "password",
+                                    value: userData.password,
+                                    onChange: ({ target }) => {
+                                        changeState({ password: target.value });
+                                    }
                                 }}
                             />
                             <Link 
@@ -123,6 +173,7 @@ export default function HomePage(props: any){
                             _hover={{
                                 backgroundColor: "rgba(0,0,0, 0.5)"
                             }}
+                            onClick={auth}
                         >
                             SIGN IN
                         </Button>

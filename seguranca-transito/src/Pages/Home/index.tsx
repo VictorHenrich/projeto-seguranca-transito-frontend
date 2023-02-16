@@ -29,7 +29,7 @@ export default function Home(){
             color: "#63B3ED",
             onActivate: onClickIconTable
         },
-        {
+        { 
             icon: BsChatDots,
             name: "chat",
             color: "#48BB78",

@@ -19,11 +19,11 @@ export default function SettingsPage(){
             height="full"
             padding={5}
             boxSizing="border-box"
+            overflow="auto"
         >
             <Card
-                width="90%"
-                height="90%"
-                overflow="auto"
+                width="50%"
+                minHeight="90%"
             >
                 <CardHeader>
                     <Center>
@@ -55,7 +55,15 @@ export default function SettingsPage(){
                             />
 
                             <InputDefault 
-                                placeholder='Email'
+                                placeholder='Usuário'
+                            />
+                        </Stack>
+                        <Stack
+                            direction="row"
+                            spacing={20}
+                        >
+                            <InputDefault 
+                                placeholder='Cargo'
                             />
                         </Stack>
                         <Stack
