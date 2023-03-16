@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     Center,
     Box,
@@ -30,6 +31,7 @@ interface UserDataProps{
 
 
 export default function HomePage(props: any){
+    const navegate = useNavigate();
 
     const [userData, setUserData] = useState<UserDataProps>({
         username: "",
@@ -46,6 +48,8 @@ export default function HomePage(props: any){
             const authorizationService = new AuthorizationService();
 
             await authorizationService.execute({ ...userData });
+
+            navegate("/home");
 
         }catch(error){
             console.log(error);

@@ -1,4 +1,5 @@
 
+
 import {
     Center
 } from "@chakra-ui/react";
@@ -13,8 +14,6 @@ import {
 } from 'react-icons/md';
 import TableDefault, { PropsColumns, ActionButtonProps, PropsBody } from '../../Components/TableDefault';
 import Maps from "../../Components/Maps";
-import DialogDefault from "../../Components/DialogDefault";
-
 
 
 export default function Home(){
@@ -122,7 +121,7 @@ export default function Home(){
                 }}
             />
             <Maps
-                isOpen
+                isOpen={false}
                 onClose={() => null}
                 position={{
                     lat: 51.505,
