@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { CSSProperties } from 'react';
 
 import {
     Avatar,
@@ -25,9 +25,6 @@ interface ConversationProps{
 
 
 export default function Conversation({ selectedChat, onSubmitChat }: ConversationProps){
-
-    const textAreaRef = useRef();
-
     return (
         <Flex
             direction="column"
@@ -40,7 +37,6 @@ export default function Conversation({ selectedChat, onSubmitChat }: Conversatio
         >
             <Flex
                 width="full"
-                maxHeight={200}
                 alignItems="center"
                 justifyContent="space-between"
                 background="secondary"
@@ -81,37 +77,54 @@ export default function Conversation({ selectedChat, onSubmitChat }: Conversatio
                 />
             </Flex>
             <Stack
-                direction="column"
-                align="start"
                 spacing={5}
                 width="full"
-                minHeight="70%"
-                maxHeight="80%"
+                minHeight="50%"
+                maxHeight="70%"
                 padding={5}
                 boxSizing="border-box"
                 overflowY="auto"
             >
                 {selectedChat.talks.map(item => {
-
-                    let background: string = "primary";
-                    let color: string = "secondary"
-
-                    if(!item.isMe){
-                        background = "secondary"
-                        color = "black"
+                    let style: any = {
+                        background: "primary",
+                        color: "secondary",
+                        borderTopRadius: 30,
+                        padding: 5
                     }
 
+                    let direction: string = "";
+
+                    if(!item.isMe){
+                        style = {
+                            ...style,
+                            background: "secondary",
+                            color: "black",
+                            borderLeftRadius: 30,
+                        }
+
+                        direction = "flex-start";
+
+                    }else{
+                        style = {
+                            ...style,
+                            borderRightRadius: 30,
+                        }
+
+                        direction = "flex-end";
+                    }
+                        
+
                     return (
-                        <Text
-                            background={background}
-                            color={color}
-                            padding={5}
-                            borderTopRadius={30}
-                            borderLeftRadius={30}
-                            marginLeft="auto"
+                        <Flex 
+                            width="100%"
+                            justifyContent={direction} 
+                            alignItems="center"
                         >
+                            <Text {...style}>
                                 {item.body}
-                        </Text>
+                            </Text>
+                        </Flex>
                     )
                 })}
             </Stack>
@@ -121,12 +134,12 @@ export default function Conversation({ selectedChat, onSubmitChat }: Conversatio
                 width="full"
                 background="secondary"
                 padding={4}
-                maxHeight={500}
-                position="absolute"
-                bottom={0}
             >
-                <Textarea 
+                <Textarea
+                    resize="none"
+                    overflow="hidden"
                     width="80%"
+                    height={100}
                     placeholder='Digite sua mensagem...'
                     borderColor="transparent"
                     _focusVisible={{
