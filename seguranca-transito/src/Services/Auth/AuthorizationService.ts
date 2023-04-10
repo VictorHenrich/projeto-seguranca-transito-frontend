@@ -1,5 +1,4 @@
-import api from "../Api/Api";
-import ApiUtil from "../Api/ApiUtil";
+import Api from "../Api";
 import IService from "../IService";
 
 
@@ -19,16 +18,15 @@ export default class AuthorizationService implements IService<AuthorizationServi
         username,
         password,
         departament
-    }: AuthorizationServiceProps): Promise<void> {
-        
+    }: AuthorizationServiceProps): Promise<void> {        
         const data = {
             usuario: username,
             senha: password,
             departamento: departament
         };
 
-        const { data: response } = await api.post(this.url, data);
+        const { data: response } = await Api.instance.post(this.url, data);
 
-        ApiUtil.setUserToken(response.data);
+        Api.setUserAuthPayload(response.data);
     }
 }

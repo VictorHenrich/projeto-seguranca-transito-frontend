@@ -1,5 +1,5 @@
-import IService from "../../Services/IService";
-import api from "../Api/Api";
+import IService from "../IService";
+import Api from "Services/Api";
 
 
 export interface UserUpdateServiceProps{
@@ -22,7 +22,6 @@ export default class UserUpdateService implements IService<UserUpdateServiceProp
         password,
         user_uuid
     }: UserUpdateServiceProps): Promise<void> {
-        
         const data = {
             usuario: username,
             nome: name,
@@ -30,7 +29,7 @@ export default class UserUpdateService implements IService<UserUpdateServiceProp
             senha: password
         };
 
-        await api.put(`${this.url}/${user_uuid}`, data);
+        await Api.instance.put(`${this.url}/${user_uuid}`, data);
     }
 
 }

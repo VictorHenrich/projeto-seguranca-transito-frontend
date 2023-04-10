@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 
-import socket from "../../Services/Socket/Socket";
+import WebSocket from "../../Services/WebSocket";
 import Chat, {ContactData} from "../../Components/Chat";
 
+
+
+const socket = WebSocket.createInstance("departament_user");
 
 
 interface ContactChatData extends ContactData{

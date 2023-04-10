@@ -21,7 +21,7 @@ export default function ApplicationRoutes(){
         },
         {
             path: '/home',
-            element: <ContainerApp />,
+            element: <PrivateRoute page={<ContainerApp />}/>,
             children: [
                 {
                     path: "",

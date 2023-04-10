@@ -1,4 +1,4 @@
-import ApiUtil, { AuthozationPayload } from "../Api/ApiUtil";
+import Api, { UserAuthPayload } from "../Api";
 import IService from "../IService";
 
 
@@ -9,7 +9,7 @@ export default class VerifyAuthenticationService implements IService<void, boole
 
         try{
 
-            const authorizationPayload: AuthozationPayload = ApiUtil.getUserToken();
+            const authorizationPayload: UserAuthPayload = Api.getUserAuthPayload();
 
             if(!authorizationPayload)
                 throw new Error('Usuário não autorizado!');
@@ -18,7 +18,6 @@ export default class VerifyAuthenticationService implements IService<void, boole
                 logged = true;
 
         }catch(error){
-
             logged = false;
         }
 

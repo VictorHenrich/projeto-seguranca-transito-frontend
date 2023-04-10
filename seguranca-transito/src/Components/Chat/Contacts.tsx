@@ -12,7 +12,8 @@ import { ContactData } from './index';
 
 interface ContactsProps{
     contacts: Omit<ContactData[], "talks">,
-    onSelectContact: (contact: ContactData) => void
+    onSelectContact: (contact: ContactData) => void,
+    selectedcontact: ContactData
 }
 
 
